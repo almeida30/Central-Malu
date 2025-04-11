@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central Malu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #5e3a8c, #1e1e2f);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #2d2d3a;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+      width: 300px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #b08de4;
+    }
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #b08de4;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #9a71d2;
+    }
+    .welcome-message {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Central Malu</h1>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Senha">
+    <button onclick="login()">Entrar</button>
+    <div class="welcome-message" id="welcome">
+      <p>Bem-vindo de volta, <span id="apelido"></span>! 💜</p>
+      <p>Central Malu está aqui pra te lembrar que Deus te ama e cuida de vocês dois.</p>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const apelido = email === 'centralmalu01@gmail.com' ? 'amado' : 'amada';
+
+      if(email === 'centralmalu01@gmail.com' && password === '18122034') {
+        document.querySelector('input[type="email"]').style.display = 'none';
+        document.querySelector('input[type="password"]').style.display = 'none';
+        document.querySelector('button').style.display = 'none';
+        document.getElementById('apelido').textContent = apelido;
+        document.getElementById('welcome').style.display = 'block';
+      } else {
+        alert('Email ou senha incorretos.');
+      }
+    }
+  </script>
+</body>
+</html>
